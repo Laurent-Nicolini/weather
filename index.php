@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <nav class="navbar navbar-light bg-light sticky-top">
+    <span class="navbar-brand my-2 mx-auto h1">INTEGRATION API</span>
+    </nav>
     
-    <div class="container-fluid">
+    <div class="container">
         <br>
         <div class="row">
-            <div class="weather">
+            <div class="weather border rounded">
 
             </div>
         </div>
@@ -21,7 +25,7 @@
         <hr>
         <br>
         <div class="row">
-            <div class="exchange">
+            <div class="exchange border rounded">
 
             </div>
         </div>
@@ -29,7 +33,7 @@
         <hr>
         <br>
         <div class="row">
-            <div class="sports">
+            <div class="sports border rounded">
 
             </div>
         </div>
