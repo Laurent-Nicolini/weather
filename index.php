@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,7 +21,11 @@
         <br>
         <div class="row">
             <div class="weather border rounded">
-
+                <form action="weather.php" method="POST">
+                    <label for="city">Choisissez votre ville</label>
+                    <input type="text" name="city" id="city">
+                    <button type="submit">Envoyer</button>
+                </form>
             </div>
         </div>
         <br>
