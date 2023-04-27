@@ -10,11 +10,14 @@ if($_POST['city']){
 
     $json = json_decode($get_content);
 
-    var_dump($json);
+    $_SESSION['city'] = $_POST['city'];
     $_SESSION['city_name'] = $json->name;
     $_SESSION['weather'] = $json->weather[0]->main;
     $_SESSION['desc'] = $json->weather[0]->description;
-    var_dump($_SESSION['desc']);
+    $_SESSION['temp'] = $json->main->temp;
+    $_SESSION['wind'] = $json->wind->speed;
+    
+    header('Location:index.php');
     exit();
 }
 
