@@ -10,6 +10,10 @@ if(isset($_SESSION['city'])){
     $temp = $_SESSION['temp'];
 }
 
+if(isset($_SESSION['json'])){
+    $json = $_SESSION['json'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +96,25 @@ if(isset($_SESSION['city'])){
         <br>
         <div class="row">
             <div class="exchange border rounded">
-                API Bourse
+                <form action="coin.php" method="POST">
+                    <button type="submit">Afficher les Echanges de Cryptomonnaies</button>
+                </form>
+                <br>
+                <div class="row flex-wrap">
+                    <?php foreach ($json as $coin){ 
+                        ?>
+
+                        <div class="card mx-2 my-2" style="width: 12rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"><?=$coin->name?></h5>
+                          <p class="card-text"><?=$coin->symbol?></p>
+                          <p class="card-text">Valeur: <?=$coin->price_usd?> $</p>
+                          <p class="card-text">Changement (24h): <?=$coin->percent_change_24h?> %</p>
+                        </div>
+                      </div>
+
+                    <?php } ?>
+                </div>
             </div>
         </div>
         <br>
